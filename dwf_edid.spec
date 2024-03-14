@@ -3,7 +3,7 @@ Version:        1
 Release:        %autorelease
 Summary:        Custom EDID for Alienware AW3423DWF containing 10bpc 165Hz and 144Hz modes.
 
-Source:         dwf_edid.tar.zst
+Source:         dwf_edid-%{version}.tar.zst
 
 License:        MIT
 
@@ -20,12 +20,5 @@ Intended to be used in combination with drm_kms_helper.edid_firmware kernel arg.
 %prep
 %autosetup
 
-%build
-
-
-%install
-mkdir -p /lib/firmware/edid
-cp dwf_edid.bin %{_prefix}/lib/firmware/edid/dwf_edid.bin
-
 %files
-%{_prefix}/lib/firmware/edid/dwf_edid.bin
+/usr/lib/firmware/edid/dwf_edid.bin
